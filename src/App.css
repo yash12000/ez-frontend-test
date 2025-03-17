@@ -1,38 +1,190 @@
-.App {
-  text-align: center;
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* Container styles */
+.app-container {
   min-height: 100vh;
+  padding: 24px;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header section */
+.header-section {
+  margin-bottom: 40px;
+}
+
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+}
+
+.main-heading {
+  font-size: 32px;
+  font-weight: bold;
+  color: #1a365d;
+  margin-bottom: 16px;
+}
+
+.description-text {
+  color: #555;
+  max-width: 800px;
+  margin-bottom: 32px;
+}
+
+/* Form styles */
+.contact-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  max-width: 600px;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.input-container {
+  flex-grow: 1;
+  position: relative;
+}
+
+.email-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.email-input:focus {
+  outline: none;
+  border-color: #4fc3f7;
+  box-shadow: 0 0 0 2px rgba(79, 195, 247, 0.2);
+}
+
+.error-input {
+  border-color: #f44336;
+}
+
+.error-message {
+  color: #f44336;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.submit-button {
+  background-color: #f47b42;
   color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-.App-link {
-  color: #61dafb;
+.submit-button:hover {
+  background-color: #e06a31;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.submit-button:disabled {
+  background-color: #f4a57e;
+  cursor: not-allowed;
+}
+
+/* Services grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.service-card {
+  background-color: #1a365d;
+  color: white;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.service-header {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.service-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+}
+
+.service-title {
+  color: #4fc3f7;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.service-description {
+  font-size: 14px;
+  color: #e0e0e0;
+}
+
+/* Responsive styles */
+@media (min-width: 480px) {
+  .app-container {
+    padding: 32px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (min-width: 720px) {
+  .contact-form {
+    flex-direction: row;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1080px) {
+  .app-container {
+    padding: 48px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .main-heading {
+    font-size: 36px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .app-container {
+    padding: 64px;
+  }
+}
+
+/* iPad Pro (2732x2048) */
+@media (min-width: 1024px) and (max-height: 1366px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
