@@ -125,28 +125,6 @@ function App() {
             eiusmod tempor incididunt...Lorem ipsum dolor sit amet, consectetur
             adipiscing elit, sed
           </p>
-
-          {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="contact-form">
-            <div className="input-container">
-              <input
-                type="text"
-                value={success ? "Form Submitted" : email}
-                onChange={(e) => setEmail(e.target.value)}
-                disabled={success || isSubmitting}
-                placeholder="Email Address"
-                className={`email-input ${error ? "error-input" : ""}`}
-              />
-              {error && <p className="error-message">{error}</p>}
-            </div>
-            <button
-              type="submit"
-              disabled={isSubmitting || success}
-              className="submit-button"
-            >
-              {isSubmitting ? "Submitting..." : "Contact Me"}
-            </button>
-          </form>
         </div>
 
         {/* Services Grid */}
@@ -165,6 +143,28 @@ function App() {
             </div>
           ))}
         </div>
+
+        {/* Contact Form */}
+        <form onSubmit={handleSubmit} className="contact-form">
+          <div className="input-container">
+            <input
+              type="text"
+              value={success ? "Form Submitted" : email}
+              onChange={(e) => setEmail(e.target.value)}
+              disabled={success || isSubmitting}
+              placeholder="Email Address"
+              className={`email-input ${error ? "error-input" : ""}`}
+            />
+            {error && <p className="error-message">{error}</p>}
+          </div>
+          <button
+            type="submit"
+            disabled={isSubmitting || success}
+            className="submit-button"
+          >
+            {isSubmitting ? "Submitting..." : "Contact Me"}
+          </button>
+        </form>
       </div>
     </div>
   );
