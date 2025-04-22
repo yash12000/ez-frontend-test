@@ -24,17 +24,14 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Reset states
     setError("");
     setSuccess(false);
 
-    // Validate empty submission
     if (!email.trim()) {
       setError("Email is required");
       return;
     }
 
-    // Validate email format
     if (!validateEmail(email)) {
       setError("Please enter a valid email address");
       return;
@@ -110,7 +107,6 @@ function App() {
   return (
     <div className="app-container">
       <div className="content-wrapper">
-        {/* Logo and Header */}
         <div className="header-section">
           <div className="logo-container">
             <img
@@ -127,7 +123,6 @@ function App() {
           </p>
         </div>
 
-        {/* Services Grid */}
         <div className="services-grid">
           {services.map((service, index) => (
             <div key={index} className="service-card">
@@ -144,7 +139,6 @@ function App() {
           ))}
         </div>
 
-        {/* Contact Form */}
         <form onSubmit={handleSubmit} className="contact-form">
           <div className="input-container">
             <input
